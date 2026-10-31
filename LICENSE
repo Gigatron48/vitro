@@ -1,0 +1,41 @@
+Vitro — проприетарное программное обеспечение / proprietary software
+Copyright (c) 2026 Gigatron48. Все права защищены. All rights reserved.
+
+Программа Vitro (исходный код, исполняемые файлы, установщик, интерфейс, протоколы,
+алгоритмы и документация) принадлежит правообладателю и охраняется законодательством
+об авторском праве (часть IV Гражданского кодекса РФ) и международными договорами.
+
+РАЗРЕШАЕТСЯ: установить и использовать копию программы, полученную от правообладателя,
+для личных некоммерческих целей.
+
+БЕЗ ПИСЬМЕННОГО РАЗРЕШЕНИЯ ПРАВООБЛАДАТЕЛЯ ЗАПРЕЩАЕТСЯ:
+ 1. копировать, распространять, публиковать, продавать, сдавать в аренду или иначе
+    передавать программу или её части третьим лицам;
+ 2. изменять программу и создавать на её основе производные произведения;
+ 3. декомпилировать, дизассемблировать и иначе исследовать устройство программы
+    (обратная разработка), в том числе с помощью систем искусственного интеллекта, —
+    кроме случаев, прямо разрешённых законом;
+ 4. использовать программу, её исходный код, а также результаты их анализа для обучения
+    моделей машинного обучения или для создания аналогичных продуктов;
+ 5. удалять или изменять уведомления об авторских правах.
+
+Нарушение этих условий влечёт ответственность, предусмотренную законодательством.
+
+Входящие в установщик программы сторонних авторов (Sunshine, Moonlight, Wintun,
+Steamworks API) распространяются на условиях их собственных лицензий — см.
+THIRD_PARTY_NOTICES.txt. Настоящая лицензия на них не распространяется.
+
+ПРОГРАММА ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ.
+
+-------------------------------------------------------------------------------
+
+English summary. Vitro is proprietary software, copyright (c) 2026 Gigatron48, all rights
+reserved. You may install and use a copy obtained from the copyright holder for personal,
+non-commercial purposes. Without written permission you may not copy, distribute, publish,
+sell or otherwise transfer it or any part of it; modify it or create derivative works;
+decompile, disassemble or otherwise reverse engineer it, including with artificial
+intelligence systems, except where the law expressly permits; use it, its source code or the
+results of analysing them to train machine-learning models or to build similar products; or
+remove copyright notices. Bundled third-party programs (Sunshine, Moonlight, Wintun,
+Steamworks API) are covered by their own licenses (see THIRD_PARTY_NOTICES.txt), not by this
+one. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vitro: телефон на мониторе</title>
+<meta name="description" content="Экран Android на мониторе без задержки, с чистым звуком и в родном разрешении. И прямо в окне у друга." />
+<link rel="icon" type="image/png" href="icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" />
+<style>
+  :root { --text: #f1f3f9; --dim: rgba(233, 237, 248, .64); --line: rgba(255, 255, 255, .1); --glass: rgba(255, 255, 255, .055); --accent: #7cc4ff; }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { font: 17px/1.55 Inter, system-ui, sans-serif; color: var(--text); background: #06070b; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before {
+    content: ""; position: fixed; inset: -20%; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(38% 34% at 16% 32%, rgba(32, 96, 200, .42), transparent 70%),
+      radial-gradient(40% 36% at 76% 74%, rgba(110, 42, 190, .40), transparent 70%),
+      radial-gradient(30% 28% at 58% 12%, rgba(150, 40, 110, .20), transparent 70%);
+    animation: drift 26s ease-in-out infinite alternate;
+  }
+  @keyframes drift { to { transform: translate3d(3%, -2%, 0) scale(1.06); } }
+  @media (prefers-reduced-motion: reduce) { body::before { animation: none; } }
+  a { color: inherit; }
+  .wrap { width: min(1080px, 100% - 40px); margin: 0 auto; }
+  header { display: flex; align-items: center; gap: 10px; padding: 22px 0; font-weight: 600; }
+  header img { width: 28px; height: 28px; }
+  .hero { text-align: center; padding: 56px 0 28px; }
+  h1 { font-size: clamp(42px, 7.4vw, 76px); line-height: 1.04; letter-spacing: -.04em; font-weight: 640; }
+  .lead { max-width: 640px; margin: 20px auto 0; font-size: clamp(18px, 2.1vw, 21px); color: var(--dim); }
+  .cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 32px; padding: 15px 30px; border-radius: 999px; font-weight: 620; text-decoration: none; color: #0a0b12; background: #f4f6fb; box-shadow: 0 10px 40px rgba(120, 170, 255, .22); transition: transform .35s cubic-bezier(.34, 1.4, .5, 1); }
+  .cta:hover { transform: scale(1.035); }
+  .small { margin-top: 14px; font-size: 14px; color: var(--dim); }
+  .shot { display: block; width: 100%; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 30px 90px rgba(0, 0, 0, .55); margin-top: 44px; }
+  h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.03em; font-weight: 630; line-height: 1.12; margin: 88px 0 12px; }
+  .sub { color: var(--dim); max-width: 660px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-top: 28px; }
+  .card { padding: 24px; border-radius: 22px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(24px) saturate(1.3); -webkit-backdrop-filter: blur(24px) saturate(1.3); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13); }
+  .card h3 { font-size: 18px; font-weight: 620; letter-spacing: -.012em; margin-bottom: 6px; }
+  .card p { font-size: 15px; color: var(--dim); }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: center; margin-top: 30px; }
+  .two img { width: 100%; border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 24px 70px rgba(0, 0, 0, .5); }
+  ol, ul { padding-left: 20px; color: var(--dim); }
+  li { margin: 7px 0; }
+  li b, .card b { color: var(--text); font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin-top: 26px; font-size: 15.5px; }
+  th, td { text-align: left; padding: 13px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--dim); font-weight: 560; font-size: 14px; }
+  td:last-child { color: var(--text); } td:first-child { color: var(--dim); }
+  kbd { font: inherit; font-size: .88em; padding: 2px 8px; border-radius: 7px; background: rgba(255, 255, 255, .1); color: var(--text); }
+  footer { margin: 90px 0 46px; color: var(--dim); font-size: 14px; }
+  @media (max-width: 560px) { h2 { margin-top: 64px; } .hero { padding-top: 26px; } table { font-size: 14px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="icon.png" alt="" /> Vitro</header>
+
+  <section class="hero">
+    <h1>Телефон на мониторе.<br />Как стекло.</h1>
+    <p class="lead">Экран Android без задержки, с несжатым звуком и в родном разрешении. А ещё прямо в окне у друга, без пережатия Discord.</p>
+    <a class="cta" href="https://github.com/Gigatron48/vitro/releases/latest/download/Vitro-Setup.exe">Скачать для Windows</a>
+    <p class="small">Windows 10 и 11, Android 7 и новее. Звук с Android 11.</p>
+  </section>
+
+  <img class="shot" src="home.png" alt="Главный экран Vitro" />
+
+  <h2>Было батником, стало приложением</h2>
+  <p class="sub">Одна кнопка вместо командной строки. Весь путь картинки и звука на компьютере написан заново.</p>
+  <table>
+    <tr><th>Раньше</th><th>Теперь</th></tr>
+    <tr><td>Чёрные рамки вокруг картинки</td><td>Свет от самой картинки, режим «Без рамок», режим «Под монитор»</td></tr>
+    <tr><td>20 Мбит/с, H.264</td><td>Авто до 120 Мбит/с, H.265, родное разрешение</td></tr>
+    <tr><td>Сжатый звук</td><td>Несжатый PCM, пресет Hi-Fi не трогает ни сэмпла</td></tr>
+    <tr><td>Нет звука на Android 16</td><td>Исправлено, способ захвата переключается сам</td></tr>
+    <tr><td>Демонстрация в Discord, текст не читается</td><td>Комната: поток идёт другу напрямую</td></tr>
+  </table>
+
+  <h2>Картинка без мыла</h2>
+  <div class="two">
+    <img src="picture.png" alt="Панель настроек картинки поверх видео" />
+    <div>
+      <ul>
+        <li><b>Частота как на телефоне.</b> Сколько кадров выдаёт экран, столько и приходит.</li>
+        <li><b>Плавность ×2.</b> Дорисовывает кадры по карте движения: телефон на 120 Гц заполняет монитор на 240 Гц.</li>
+        <li><b>Свои фильтры.</b> Масштабирование Lanczos и адаптивная резкость, текст остаётся текстом.</li>
+        <li><b>HDR и пресеты.</b> Меняются на лету, прямо во время трансляции.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Звук, который слышно</h2>
+  <div class="two">
+    <div>
+      <ul>
+        <li><b>Hi-Fi.</b> Несжатые 48 кГц прямо с телефона.</li>
+        <li><b>7.1 в наушниках.</b> Стерео раскладывается на виртуальные колонки вокруг головы.</li>
+        <li><b>Пресеты.</b> Бас, Чистый звук, Кино, Игры, Ночь, и свой эквалайзер со спектром.</li>
+        <li><b>Без щелчков.</b> Лимитер и плавная подстройка часов телефона и компьютера.</li>
+      </ul>
+    </div>
+    <img src="sound.png" alt="Панель звука с эквалайзером" />
+  </div>
+
+  <h2>Комнаты вместо демонстрации</h2>
+  <p class="sub">Друг открывает комнату и зовёт тебя кодом или из Steam. Ты смотришь его телефон в обычном окне: сворачиваешь, переключаешься, играешь, а звук идёт дальше.</p>
+  <div class="grid">
+    <div class="card"><h3>Без пережатия</h3><p>Другу уходит то, что закодировал телефон. Для медленного канала запускается второй кодировщик, а у хозяина качество не падает.</p></div>
+    <div class="card"><h3>Сеть из LowLag</h3><p>Прямой канал, реле Steam как запасной путь, автоматический переход на лучший маршрут, шифрование.</p></div>
+    <div class="card"><h3>Управление по кнопке</h3><p>Хозяин даёт его тумблером и забирает в любой момент. <kbd>Ctrl+Alt+X</kbd> из любой программы мгновенно обрывает показ.</p></div>
+  </div>
+
+  <h2>Как начать</h2>
+  <ol>
+    <li>Установите Vitro. Windows может предупредить о неизвестном издателе: «Подробнее», затем «Выполнить в любом случае».</li>
+    <li>На телефоне: Настройки → О телефоне → семь раз нажмите «Номер сборки».</li>
+    <li>В разделе «Для разработчиков» включите <b>«Отладка по USB»</b>. На Xiaomi, POCO и Redmi ещё <b>«Отладка по USB (настройки безопасности)»</b>.</li>
+    <li>Подключите кабель, нажмите «Разрешить» на телефоне и большую кнопку в Vitro.</li>
+  </ol>
+  <p class="sub" style="margin-top:14px">Дальше можно перейти на Wi-Fi одной кнопкой или по QR-коду: вкладка «Связь».</p>
+
+  <footer>Работает на официальном scrcpy-server 5.0.1 (Apache 2.0). © 2026 Gigatron48</footer>
+</div>
+</body>
+</html>
